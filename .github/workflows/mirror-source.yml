@@ -1,6 +1,7 @@
 name: One-time mirror from noagrp/j
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
 
