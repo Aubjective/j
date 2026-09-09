@@ -1,0 +1,23 @@
+name: One-time mirror from noagrp/j
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror branches and tags from source
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git clone --mirror https://github.com/noagrp/j.git source.git
+          cd source.git
+          git remote add target "https://x-access-token:${GH_TOKEN}@github.com/Aubjective/j.git"
+          git push --force target 'refs/heads/*:refs/heads/*'
+          git push --force target 'refs/tags/*:refs/tags/*'
