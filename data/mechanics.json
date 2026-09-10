@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "source": "Jobmania Database Guides and Skill Unit sheets, Localization Skills Description sheet, plus confirmed in-game descriptions",
   "powerLv": {
     "stat": {
@@ -950,6 +950,24 @@
       ],
       "randomAmount": true,
       "enemyStealCannotBeRecovered": true
+    },
+    "Exhaust": {
+      "family": "Apply Tag",
+      "skillUnit": "ApplyOn",
+      "effect": "Exhaust",
+      "termKey": "mechanic.exhaust",
+      "localisationKey": "ExhaustApplyXDescr",
+      "mechanicConfirmed": true,
+      "confirmationSource": "live+sheet+localisation",
+      "clickable": true,
+      "templateKey": "exhaust",
+      "templateArgs": {
+        "extraCooldown": "heroExtraCooldownTurns"
+      },
+      "usableOncePerCombat": true,
+      "heroExtraCooldownTurns": 2,
+      "enemyThresholdUseOnce": true,
+      "enemyRandomActionsUnaffected": true
     }
   },
   "applyTags": {
