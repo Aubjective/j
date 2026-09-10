@@ -1,185 +1,81 @@
 {
-  "version": 4,
+  "version": 5,
   "source": "Jobmania Database Skill Unit sheet delivery wording, Localization Skills Description sheet, plus confirmed in-game descriptions",
   "families": {
     "elementStatus": {
-      "effects": {
-        "Fire": "burn",
-        "Water": "chill",
-        "Thunder": "paralysis",
-        "Earth": "seed",
-        "Wind": "dizzy",
-        "Light": "blind",
-        "Dark": "depress"
-      },
+      "effects": {"Fire":"burn","Water":"chill","Thunder":"paralysis","Earth":"seed","Wind":"dizzy","Light":"blind","Dark":"depress"},
       "rules": [
-        {
-          "kind": "ability",
-          "skillUnit": "Debuff",
-          "template": "inflictOpponent"
-        },
-        {
-          "kind": "ability",
-          "skillUnit": "Protect",
-          "template": "removeSelf"
-        },
-        {
-          "kind": "ability",
-          "skillUnit": "Sacrifice",
-          "template": "gainSelf"
-        },
-        {
-          "kind": "ability",
-          "skillUnit": "Curse",
-          "template": "gainStartOfTurn"
-        },
-        {
-          "kind": "passive",
-          "skillUnit": "InstantNerf",
-          "template": "gainCombatStart"
-        },
-        {
-          "kind": "passive",
-          "skillUnit": "TurnDebuff",
-          "template": "inflictEndOfTurn"
-        },
-        {
-          "kind": "passive",
-          "skillUnit": "Reflect",
-          "template": "reflectStatus"
-        },
-        {
-          "kind": "passive",
-          "skillUnit": "Protect",
-          "template": "immuneStatus"
-        }
+        {"kind":"ability","skillUnit":"Debuff","template":"inflictOpponent"},
+        {"kind":"ability","skillUnit":"Protect","template":"removeSelf"},
+        {"kind":"ability","skillUnit":"Sacrifice","template":"gainSelf"},
+        {"kind":"ability","skillUnit":"Curse","template":"gainStartOfTurn"},
+        {"kind":"passive","skillUnit":"InstantNerf","template":"gainCombatStart"},
+        {"kind":"passive","skillUnit":"TurnDebuff","template":"inflictEndOfTurn"},
+        {"kind":"passive","skillUnit":"Reflect","template":"reflectStatus"},
+        {"kind":"passive","skillUnit":"Protect","template":"immuneStatus"}
       ]
     },
     "elementActionBuff": {
-      "effects": {
-        "Fire": "fireActionBuff",
-        "Water": "waterActionBuff",
-        "Thunder": "thunderActionBuff",
-        "Earth": "earthActionBuff",
-        "Wind": "windActionBuff",
-        "Light": "lightActionBuff",
-        "Dark": "darkActionBuff"
-      },
+      "effects": {"Fire":"fireActionBuff","Water":"waterActionBuff","Thunder":"thunderActionBuff","Earth":"earthActionBuff","Wind":"windActionBuff","Light":"lightActionBuff","Dark":"darkActionBuff"},
       "rules": [
-        {
-          "kind": "ability",
-          "skillUnit": "InstantBoost",
-          "template": "applyActionBuffSelf"
-        }
+        {"kind":"ability","skillUnit":"InstantBoost","template":"applyActionBuffSelf"}
       ]
     },
     "bleedStatus": {
-      "effects": {
-        "Bleed": "bleed"
-      },
+      "effects": {"Bleed":"bleed"},
       "rules": [
-        {
-          "kind": "ability",
-          "skillUnit": "Debuff",
-          "template": "inflictOpponent"
-        },
-        {
-          "kind": "ability",
-          "skillUnit": "Protect",
-          "template": "removeSelf"
-        },
-        {
-          "kind": "ability",
-          "skillUnit": "Sacrifice",
-          "template": "gainSelf"
-        },
-        {
-          "kind": "ability",
-          "skillUnit": "Curse",
-          "template": "gainStartOfTurn"
-        },
-        {
-          "kind": "passive",
-          "skillUnit": "InstantNerf",
-          "template": "gainCombatStart"
-        },
-        {
-          "kind": "passive",
-          "skillUnit": "TurnDebuff",
-          "template": "inflictEndOfTurn"
-        },
-        {
-          "kind": "passive",
-          "skillUnit": "Reflect",
-          "template": "reflectStatus"
-        },
-        {
-          "kind": "passive",
-          "skillUnit": "Protect",
-          "template": "immuneStatus"
-        }
+        {"kind":"ability","skillUnit":"Debuff","template":"inflictOpponent"},
+        {"kind":"ability","skillUnit":"Protect","template":"removeSelf"},
+        {"kind":"ability","skillUnit":"Sacrifice","template":"gainSelf"},
+        {"kind":"ability","skillUnit":"Curse","template":"gainStartOfTurn"},
+        {"kind":"passive","skillUnit":"InstantNerf","template":"gainCombatStart"},
+        {"kind":"passive","skillUnit":"TurnDebuff","template":"inflictEndOfTurn"},
+        {"kind":"passive","skillUnit":"Reflect","template":"reflectStatus"},
+        {"kind":"passive","skillUnit":"Protect","template":"immuneStatus"}
+      ]
+    },
+    "statusDrain": {
+      "effects": {"Bleed":"bleed"},
+      "rules": [
+        {"kind":"passive","skillUnit":"Drain","template":"drainStatusDamage"}
       ]
     }
   },
   "locales": {
     "en": {
       "terms": {
-        "status.burn": "Burn",
-        "status.chill": "Chill",
-        "status.paralysis": "Paralysis",
-        "status.seed": "Seed",
-        "status.dizzy": "Dizzy",
-        "status.blind": "Blind",
-        "status.depress": "Depress",
-        "status.fireActionBuff": "Fire Action Buff",
-        "status.waterActionBuff": "Water Action Buff",
-        "status.thunderActionBuff": "Thunder Action Buff",
-        "status.earthActionBuff": "Earth Action Buff",
-        "status.windActionBuff": "Wind Action Buff",
-        "status.lightActionBuff": "Light Action Buff",
-        "status.darkActionBuff": "Dark Action Buff",
-        "timing.combatStart": "Combat Start",
-        "timing.startOfTurn": "Start-of-Turn",
-        "timing.endOfTurn": "End-of-Turn",
-        "status.bleed": "Bleed"
+        "status.burn":"Burn","status.chill":"Chill","status.paralysis":"Paralysis","status.seed":"Seed","status.dizzy":"Dizzy","status.blind":"Blind","status.depress":"Depress",
+        "status.fireActionBuff":"Fire Action Buff","status.waterActionBuff":"Water Action Buff","status.thunderActionBuff":"Thunder Action Buff","status.earthActionBuff":"Earth Action Buff","status.windActionBuff":"Wind Action Buff","status.lightActionBuff":"Light Action Buff","status.darkActionBuff":"Dark Action Buff",
+        "timing.combatStart":"Combat Start","timing.startOfTurn":"Start-of-Turn","timing.endOfTurn":"End-of-Turn","status.bleed":"Bleed"
       },
       "templates": {
-        "inflictOpponent": "Inflict {multiplier} {status} on the opponent.",
-        "removeSelf": "Remove {status} from self.",
-        "gainSelf": "Gain {multiplier} {status} on self.",
-        "gainStartOfTurn": "Gain {multiplier} {status} at {startOfTurn}.",
-        "gainCombatStart": "Start combat with {multiplier} {status}.",
-        "inflictEndOfTurn": "Inflict {multiplier} {status} on the opponent at {endOfTurn}.",
-        "reflectStatus": "When the opponent inflicts {status} on you, inflict the same number of {status} stacks on the opponent.",
-        "immuneStatus": "Immune to {status}.",
-        "applyActionBuffSelf": "Apply {multiplier} {status} to self."
+        "inflictOpponent":"Inflict {multiplier} {status} on the opponent.",
+        "removeSelf":"Remove {status} from self.",
+        "gainSelf":"Gain {multiplier} {status} on self.",
+        "gainStartOfTurn":"Gain {multiplier} {status} at {startOfTurn}.",
+        "gainCombatStart":"Start combat with {multiplier} {status}.",
+        "inflictEndOfTurn":"Inflict {multiplier} {status} on the opponent at {endOfTurn}.",
+        "reflectStatus":"When the opponent inflicts {status} on you, inflict the same number of {status} stacks on the opponent.",
+        "immuneStatus":"Immune to {status}.",
+        "applyActionBuffSelf":"Apply {multiplier} {status} to self.",
+        "drainStatusDamage":"When the opponent suffers from {status} damage, heal for half of the amount the opponent suffers."
       }
     },
     "zh-CN": {
       "terms": {
-        "status.fireActionBuff": "火微增益",
-        "status.waterActionBuff": "水微增益",
-        "status.thunderActionBuff": "雷微增益",
-        "status.earthActionBuff": "土微增益",
-        "status.windActionBuff": "风微增益",
-        "status.lightActionBuff": "光微增益",
-        "status.darkActionBuff": "暗微增益",
-        "status.bleed": "出血"
+        "status.fireActionBuff":"火微增益","status.waterActionBuff":"水微增益","status.thunderActionBuff":"雷微增益","status.earthActionBuff":"土微增益","status.windActionBuff":"风微增益","status.lightActionBuff":"光微增益","status.darkActionBuff":"暗微增益","status.bleed":"出血"
       },
-      "templates": {}
+      "templates": {
+        "drainStatusDamage":"当对手受到 {status} 伤害时，自己恢复对手所受伤害量的一半。"
+      }
     },
     "zh-TW": {
       "terms": {
-        "status.fireActionBuff": "火微增益",
-        "status.waterActionBuff": "水微增益",
-        "status.thunderActionBuff": "雷微增益",
-        "status.earthActionBuff": "土微增益",
-        "status.windActionBuff": "風微增益",
-        "status.lightActionBuff": "光微增益",
-        "status.darkActionBuff": "暗微增益",
-        "status.bleed": "出血"
+        "status.fireActionBuff":"火微增益","status.waterActionBuff":"水微增益","status.thunderActionBuff":"雷微增益","status.earthActionBuff":"土微增益","status.windActionBuff":"風微增益","status.lightActionBuff":"光微增益","status.darkActionBuff":"暗微增益","status.bleed":"出血"
       },
-      "templates": {}
+      "templates": {
+        "drainStatusDamage":"當對手受到 {status} 傷害時，自己恢復對手所受傷害量的一半。"
+      }
     }
   }
 }
