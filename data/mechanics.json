@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "source": "Jobmania Database Guides and Skill Unit sheets, Localization Skills Description sheet, plus confirmed in-game descriptions",
   "powerLv": {
     "stat": {
@@ -411,7 +411,9 @@
       "triggerAt": "GotAttacked",
       "directDamageReductionPercent": 30,
       "upgradeDirectDamageReductionPercent": 40,
-      "effectivenessDecayPercentPerHit": 10
+      "effectivenessDecayPercentPerHit": 10,
+      "decreaseAt": "GotAttacked",
+      "removedAt": "GotAttacked"
     },
     "Second Chance": {
       "skillUnit": "Protect",
@@ -968,6 +970,29 @@
       "heroExtraCooldownTurns": 2,
       "enemyThresholdUseOnce": true,
       "enemyRandomActionsUnaffected": true
+    },
+    "Stack Charge": {
+      "skillUnit": "Buff",
+      "effect": "Charge",
+      "termKey": "mechanic.stackCharge",
+      "localisationKey": "StackChargeXDescr",
+      "mechanicConfirmed": true,
+      "confirmationSource": "live+sheet+localisation",
+      "clickable": true,
+      "templateKey": "stackCharge",
+      "templateArgs": {
+        "basePercent": "nextDamageIncreasePercent",
+        "decayPercent": "effectDecreasePercentPerUse",
+        "upgradePercent": "upgradeNextDamageIncreasePercent"
+      },
+      "maxStacks": 1,
+      "upgradeMaxStacks": 1,
+      "triggerAt": "AttackEffect",
+      "decreaseAt": "AttackEffect",
+      "removedAt": "AttackEffect",
+      "nextDamageIncreasePercent": 50,
+      "effectDecreasePercentPerUse": 25,
+      "upgradeNextDamageIncreasePercent": 75
     }
   },
   "applyTags": {
