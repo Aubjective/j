@@ -1,0 +1,69 @@
+name: Update Exhaust mechanic
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-exhaust-mechanic.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update Exhaust reusable mechanic
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          mp = Path('data/mechanics.json')
+          m = json.loads(mp.read_text(encoding='utf-8'))
+          m['version'] = max(int(m.get('version', 0)), 14) + 1
+          m.setdefault('effectDefinitions', {})['Exhaust'] = {
+              'family': 'Apply Tag',
+              'skillUnit': 'ApplyOn',
+              'effect': 'Exhaust',
+              'termKey': 'mechanic.exhaust',
+              'localisationKey': 'ExhaustApplyXDescr',
+              'mechanicConfirmed': True,
+              'confirmationSource': 'live+sheet+localisation',
+              'clickable': True,
+              'templateKey': 'exhaust',
+              'templateArgs': {'extraCooldown': 'heroExtraCooldownTurns'},
+              'usableOncePerCombat': True,
+              'heroExtraCooldownTurns': 2,
+              'enemyThresholdUseOnce': True,
+              'enemyRandomActionsUnaffected': True
+          }
+          mp.write_text(json.dumps(m, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          lp = Path('data/mechanics_localisation.json')
+          l = json.loads(lp.read_text(encoding='utf-8'))
+          l['version'] = max(int(l.get('version', 0)), 12) + 1
+
+          en = l.setdefault('locales', {}).setdefault('en', {})
+          en.setdefault('terms', {})['mechanic.exhaust'] = 'Exhaust'
+          en.setdefault('mechanicNames', {})['Exhaust'] = 'Exhaust'
+          en.setdefault('templates', {})['exhaust'] = "This ability can only be used once in each combat. If it is a Hero ability, it will have {extraCooldown} extra turns of cooldown/ Enemy monsters will use this as threshold ability only once, but the effect does not apply to their random actions."
+
+          cn = l['locales'].setdefault('zh-CN', {})
+          cn.setdefault('terms', {})['mechanic.exhaust'] = '除外'
+          cn.setdefault('mechanicNames', {})['Exhaust'] = '除外'
+          cn.setdefault('templates', {})['exhaust'] = '每场战斗只能使用此技能一次, 如果此技能是英雄的主动技能时, 延长{extraCooldown}回合的冷却时间 / 对于敌人, 作为临界点技能只会使用一次, 但作为随机技能将没有限制。'
+
+          tw = l['locales'].setdefault('zh-TW', {})
+          tw.setdefault('terms', {})['mechanic.exhaust'] = '除外'
+          tw.setdefault('mechanicNames', {})['Exhaust'] = '除外'
+          tw.setdefault('templates', {})['exhaust'] = '每場戰鬥只能使用此技能一次, 如果此技能是英雄的主動技能時, 延長{extraCooldown}回合的冷卻時間 / 對於敵人, 作為臨界點技能只會使用一次, 但作為隨機技能將沒有限制。'
+
+          lp.write_text(json.dumps(l, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+      - name: Commit changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/mechanics.json data/mechanics_localisation.json
+          git commit -m 'Add confirmed Exhaust reusable mechanic' || exit 0
+          git push
