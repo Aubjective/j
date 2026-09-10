@@ -51,6 +51,10 @@
             if (window.JobmaniaMechanics?.load) {
                 await window.JobmaniaMechanics.load('data/mechanics.json');
             }
+            await loadScriptOnce('delivery-patterns.js', 'JobmaniaDeliveryPatterns');
+            if (window.JobmaniaDeliveryPatterns?.load) {
+                await window.JobmaniaDeliveryPatterns.load('data/delivery_patterns.json');
+            }
             return window.JobmaniaSkillUnit;
         })().catch(error => {
             console.error('Failed to load SkillUnit mechanics runtime:', error);
@@ -372,7 +376,13 @@
             const text = definition.termKey
                 ? mechanics.localizeTerm?.(definition.termKey, locale, mechanics.getMechanicName?.(name, locale) || name)
                 : (mechanics.getMechanicName?.(name, locale) || name);
-            if (text) candidates.push({ text, key: `mechanic.${name.toLowerCase().replace(/[^a-z0-9]+/g, '.')}`, kind: 'reusable', mechanicName: name, priority: 45 });
+            if (text) {
+                const key = `mechanic.${name.toLowerCase().replace(/[^a-z0-9]+/g, '.')}`;
+                candidates.push({ text, key, kind: 'reusable', mechanicName: name, priority: 45 });
+                if (definition.applyTag || definition.family === 'Apply Tag') {
+                    candidates.push({ text: `(${text})`, key, kind: 'reusable', mechanicName: name, priority: 80 });
+                }
+            }
         }
 
         const seen = new Set();

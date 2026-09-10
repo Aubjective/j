@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "locales": {
     "en": {
       "terms": {
@@ -48,7 +48,8 @@
         "mechanic.protectPierce": "Protect Pierce",
         "mechanic.steal": "Steal",
         "mechanic.exhaust": "Exhaust",
-        "mechanic.stackCharge": "Stack Charge"
+        "mechanic.stackCharge": "Stack Charge",
+        "mechanic.food": "Food"
       },
       "mechanicNames": {
         "Strength Buff": "Strength Buff",
@@ -84,7 +85,8 @@
         "Protect Pierce": "Protect Pierce",
         "Steal": "Steal",
         "Exhaust": "Exhaust",
-        "Stack Charge": "Stack Charge"
+        "Stack Charge": "Stack Charge",
+        "Food": "Food"
       },
       "nameTemplates": {
         "element": "{element} Element",
@@ -130,7 +132,8 @@
         "protectPierce": "For each stack, {piercePercent}% of the opponent's attack will pierce through Protect, and the damage received on Invulnerable buff will be increased by {invulnerableIncrease}. (Max {max} stacks. Removed at the end of turn)",
         "steal": "(Player) If this skill kills the opponent, gain random amount of dungeon coins, golds or crystals / (Enemy Monster) Steal random amount of dungeon coins, golds or crystals from the player (Can't be taken back).",
         "exhaust": "This ability can only be used once in each combat. If it is a Hero ability, it will have {extraCooldown} extra turns of cooldown/ Enemy monsters will use this as threshold ability only once, but the effect does not apply to their random actions.",
-        "stackCharge": "Increase the next damage dealt by {basePercent}%, decrease the effect by {decayPercent}% for each use. ({upgradePercent}% if upgraded)."
+        "stackCharge": "Increase the next damage dealt by {basePercent}%, decrease the effect by {decayPercent}% for each use. ({upgradePercent}% if upgraded).",
+        "food": "This skill has [Exhaust] effect. Reduce your Bad Mood debuff stacks by half upon use."
       }
     },
     "zh-CN": {
@@ -167,7 +170,8 @@
         "mechanic.protectPierce": "护甲贯通",
         "mechanic.steal": "偷盗",
         "mechanic.exhaust": "除外",
-        "mechanic.stackCharge": "叠加蓄力"
+        "mechanic.stackCharge": "叠加蓄力",
+        "mechanic.food": "食物"
       },
       "mechanicNames": {
         "Protect": "护甲",
@@ -195,7 +199,8 @@
         "Protect Pierce": "护甲贯通",
         "Steal": "偷盗",
         "Exhaust": "除外",
-        "Stack Charge": "叠加蓄力"
+        "Stack Charge": "叠加蓄力",
+        "Food": "食物"
       },
       "nameTemplates": {},
       "linkTemplates": {},
@@ -215,7 +220,8 @@
         "protectPierce": "每层叠加, 敌方{piercePercent}%的攻击将会贯通自身的护甲, 并且无敌效果受到的伤害+{invulnerableIncrease}。(叠加上限{max}层。回合结束后消除)",
         "steal": "(玩家) 如果此技能是致命一击，获得任意数目的探险币，金币或水晶 / (敌人) 从玩家偷取随机数目的探险币，金币或水晶（不能夺回）。",
         "exhaust": "每场战斗只能使用此技能一次, 如果此技能是英雄的主动技能时, 延长{extraCooldown}回合的冷却时间 / 对于敌人, 作为临界点技能只会使用一次, 但作为随机技能将没有限制。",
-        "stackCharge": "下一击的伤害提升{basePercent}%, 每次触发减少{decayPercent}%效果。 (升级后{upgradePercent}% )"
+        "stackCharge": "下一击的伤害提升{basePercent}%, 每次触发减少{decayPercent}%效果。 (升级后{upgradePercent}% )",
+        "food": "这个技能有【除外】效果。使用此技能后，你的坏情绪叠加减半。"
       }
     },
     "zh-TW": {
@@ -252,7 +258,8 @@
         "mechanic.protectPierce": "護甲貫通",
         "mechanic.steal": "偷盜",
         "mechanic.exhaust": "除外",
-        "mechanic.stackCharge": "疊加蓄力"
+        "mechanic.stackCharge": "疊加蓄力",
+        "mechanic.food": "食物"
       },
       "mechanicNames": {
         "Protect": "護甲",
@@ -280,7 +287,8 @@
         "Protect Pierce": "護甲貫通",
         "Steal": "偷盜",
         "Exhaust": "除外",
-        "Stack Charge": "疊加蓄力"
+        "Stack Charge": "疊加蓄力",
+        "Food": "食物"
       },
       "nameTemplates": {},
       "linkTemplates": {},
@@ -300,7 +308,8 @@
         "protectPierce": "每層疊加, 敵方{piercePercent}%的攻擊將會貫通自身的護甲, 並且無敵效果受到的傷害+{invulnerableIncrease}。(疊加上限{max}層。回合结束後消除)",
         "steal": "(玩家) 如果此技能是致命一擊，獲得任意數目的探險幣，金幣或水晶 / (敵人) 從玩家偷取隨機數目的探險幣，金幣或水晶（不能奪回）。",
         "exhaust": "每場戰鬥只能使用此技能一次, 如果此技能是英雄的主動技能時, 延長{extraCooldown}回合的冷卻時間 / 對於敵人, 作為臨界點技能只會使用一次, 但作為隨機技能將沒有限制。",
-        "stackCharge": "下一擊的傷害提升{basePercent}%, 每次觸發減少{decayPercent}%效果。 (升級後{upgradePercent}% )"
+        "stackCharge": "下一擊的傷害提升{basePercent}%, 每次觸發減少{decayPercent}%效果。 (升級後{upgradePercent}% )",
+        "food": "這個技能有【除外】效果。使用此技能後，你的壞情緒疊加減半。"
       }
     }
   }

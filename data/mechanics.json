@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "source": "Jobmania Database Guides and Skill Unit sheets, Localization Skills Description sheet, plus confirmed in-game descriptions",
   "powerLv": {
     "stat": {
@@ -951,7 +951,9 @@
         "Crystals"
       ],
       "randomAmount": true,
-      "enemyStealCannotBeRecovered": true
+      "enemyStealCannotBeRecovered": true,
+      "family": "Apply Tag",
+      "applyTag": true
     },
     "Exhaust": {
       "family": "Apply Tag",
@@ -969,7 +971,8 @@
       "usableOncePerCombat": true,
       "heroExtraCooldownTurns": 2,
       "enemyThresholdUseOnce": true,
-      "enemyRandomActionsUnaffected": true
+      "enemyRandomActionsUnaffected": true,
+      "applyTag": true
     },
     "Stack Charge": {
       "skillUnit": "Buff",
@@ -993,6 +996,21 @@
       "nextDamageIncreasePercent": 50,
       "effectDecreasePercentPerUse": 25,
       "upgradeNextDamageIncreasePercent": 75
+    },
+    "Food": {
+      "family": "Apply Tag",
+      "applyTag": true,
+      "skillUnit": "ApplyOn",
+      "effect": "Food",
+      "termKey": "mechanic.food",
+      "localisationKey": "FoodDescr",
+      "mechanicConfirmed": true,
+      "confirmationSource": "live+sheet+localisation",
+      "clickable": true,
+      "templateKey": "food",
+      "includesExhaust": true,
+      "badMoodStacksReduction": "half",
+      "triggerAt": "AfterAction"
     }
   },
   "applyTags": {

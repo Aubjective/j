@@ -12,8 +12,8 @@
 
   function normalizeLocale(locale) {
     const raw = String(locale || 'en').trim().toLowerCase();
-    if (raw === 'zh-cn' || raw === 'zh_hans' || raw === 'zh-hans' || raw === 'simplified chinese') return 'zh-CN';
-    if (raw === 'zh-tw' || raw === 'zh_hant' || raw === 'zh-hant' || raw === 'traditional chinese') return 'zh-TW';
+    if (raw === 'zh-cn' || raw === 'zh_hans' || raw === 'zh-hans' || raw === 'simplified chinese' || raw === 'chinese') return 'zh-CN';
+    if (raw === 'zh-tw' || raw === 'zh_hant' || raw === 'zh-hant' || raw === 'traditional chinese' || raw === 'chinese (traditional)') return 'zh-TW';
     return raw.startsWith('en') || raw === 'english' ? 'en' : String(locale || 'en');
   }
 

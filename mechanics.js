@@ -29,8 +29,8 @@
 
   function normalizeLocale(locale) {
     const raw = String(locale || 'en').trim().toLowerCase();
-    if (raw === 'zh-cn' || raw === 'zh_hans' || raw === 'zh-hans' || raw === 'simplified chinese') return 'zh-CN';
-    if (raw === 'zh-tw' || raw === 'zh_hant' || raw === 'zh-hant' || raw === 'traditional chinese') return 'zh-TW';
+    if (raw === 'zh-cn' || raw === 'zh_hans' || raw === 'zh-hans' || raw === 'simplified chinese' || raw === 'chinese') return 'zh-CN';
+    if (raw === 'zh-tw' || raw === 'zh_hant' || raw === 'zh-hant' || raw === 'traditional chinese' || raw === 'chinese (traditional)') return 'zh-TW';
     return raw.startsWith('en') || raw === 'english' ? 'en' : locale || 'en';
   }
 
@@ -233,10 +233,15 @@
     return null;
   }
 
-  function getReusableTemplateValues(definition) {
+  function getReusableTemplateValues(definition, locale) {
     const values = {};
     for (const [placeholder, sourceKey] of Object.entries(definition?.templateArgs || {})) {
-      values[placeholder] = getPath(definition, sourceKey);
+      let value = getPath(definition, sourceKey);
+      if (placeholder === 'element' && value != null) {
+        const id = normalizeElementId(value);
+        if (mechanicsData?.elementMechanics?.elements?.[id]) value = getElementLabel(id, locale);
+      }
+      values[placeholder] = value;
     }
     return values;
   }
@@ -253,7 +258,7 @@
     if (definition.templateKey) {
       const template = templates[definition.templateKey]
         || localisationData?.locales?.en?.templates?.[definition.templateKey];
-      if (template) return fillTemplate(template, getReusableTemplateValues(definition));
+      if (template) return fillTemplate(template, getReusableTemplateValues(definition, locale));
     }
 
     if (definition.skillUnit === 'Buff' && ['Strength', 'Agility', 'Intelligence', 'MaxHP'].includes(definition.effect)) {
