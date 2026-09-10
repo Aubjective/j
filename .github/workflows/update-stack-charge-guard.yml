@@ -1,0 +1,96 @@
+name: Update Stack Charge and Stack Guard
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-stack-charge-guard.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update confirmed mechanics
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          mp = Path('data/mechanics.json')
+          m = json.loads(mp.read_text())
+          m['version'] = int(m.get('version', 0)) + 1
+          defs = m.setdefault('effectDefinitions', {})
+
+          defs['Stack Guard'].update({
+              'skillUnit': 'Buff',
+              'effect': 'Guard',
+              'termKey': 'mechanic.stackGuard',
+              'localisationKey': 'StackGuardXDescr',
+              'mechanicConfirmed': True,
+              'confirmationSource': 'live+sheet+localisation',
+              'clickable': True,
+              'templateKey': 'stackGuard',
+              'templateArgs': {
+                  'basePercent': 'directDamageReductionPercent',
+                  'upgradePercent': 'upgradeDirectDamageReductionPercent',
+                  'decayPercent': 'effectivenessDecayPercentPerHit'
+              },
+              'maxStacks': 1,
+              'upgradeMaxStacks': 1,
+              'triggerAt': 'GotAttacked',
+              'decreaseAt': 'GotAttacked',
+              'removedAt': 'GotAttacked',
+              'directDamageReductionPercent': 30,
+              'upgradeDirectDamageReductionPercent': 40,
+              'effectivenessDecayPercentPerHit': 10
+          })
+
+          defs['Stack Charge'] = {
+              'skillUnit': 'Buff',
+              'effect': 'Charge',
+              'termKey': 'mechanic.stackCharge',
+              'localisationKey': 'StackChargeXDescr',
+              'mechanicConfirmed': True,
+              'confirmationSource': 'live+sheet+localisation',
+              'clickable': True,
+              'templateKey': 'stackCharge',
+              'templateArgs': {
+                  'basePercent': 'nextDamageIncreasePercent',
+                  'decayPercent': 'effectDecreasePercentPerUse',
+                  'upgradePercent': 'upgradeNextDamageIncreasePercent'
+              },
+              'maxStacks': 1,
+              'upgradeMaxStacks': 1,
+              'triggerAt': 'AttackEffect',
+              'decreaseAt': 'AttackEffect',
+              'removedAt': 'AttackEffect',
+              'nextDamageIncreasePercent': 50,
+              'effectDecreasePercentPerUse': 25,
+              'upgradeNextDamageIncreasePercent': 75
+          }
+          mp.write_text(json.dumps(m, ensure_ascii=False, indent=2) + '\n')
+
+          lp = Path('data/mechanics_localisation.json')
+          loc = json.loads(lp.read_text())
+          loc['version'] = int(loc.get('version', 0)) + 1
+          additions = {
+              'en': ('Stack Charge', 'Increase the next damage dealt by {basePercent}%, decrease the effect by {decayPercent}% for each use. ({upgradePercent}% if upgraded).'),
+              'zh-CN': ('叠加蓄力', '下一击的伤害提升{basePercent}%, 每次触发减少{decayPercent}%效果。 (升级后{upgradePercent}% )'),
+              'zh-TW': ('疊加蓄力', '下一擊的傷害提升{basePercent}%, 每次觸發減少{decayPercent}%效果。 (升級後{upgradePercent}% )')
+          }
+          for locale, (term, template) in additions.items():
+              block = loc.setdefault('locales', {}).setdefault(locale, {})
+              block.setdefault('terms', {})['mechanic.stackCharge'] = term
+              block.setdefault('mechanicNames', {})['Stack Charge'] = term
+              block.setdefault('templates', {})['stackCharge'] = template
+          lp.write_text(json.dumps(loc, ensure_ascii=False, indent=2) + '\n')
+      - name: Commit changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/mechanics.json data/mechanics_localisation.json
+          git commit -m 'Confirm Stack Charge and Stack Guard mechanics' || exit 0
+          git push
