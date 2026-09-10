@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "source": "Jobmania Database Skill Unit sheet delivery wording, Localization Skills Description sheet, plus confirmed in-game descriptions",
   "families": {
     "elementStatus": {
@@ -13,14 +13,46 @@
         "Dark": "depress"
       },
       "rules": [
-        { "kind": "ability", "skillUnit": "Debuff", "template": "inflictOpponent" },
-        { "kind": "ability", "skillUnit": "Protect", "template": "removeSelf" },
-        { "kind": "ability", "skillUnit": "Sacrifice", "template": "gainSelf" },
-        { "kind": "ability", "skillUnit": "Curse", "template": "gainStartOfTurn" },
-        { "kind": "passive", "skillUnit": "InstantNerf", "template": "gainCombatStart" },
-        { "kind": "passive", "skillUnit": "TurnDebuff", "template": "inflictEndOfTurn" },
-        { "kind": "passive", "skillUnit": "Reflect", "template": "reflectStatus" },
-        { "kind": "passive", "skillUnit": "Protect", "template": "immuneStatus" }
+        {
+          "kind": "ability",
+          "skillUnit": "Debuff",
+          "template": "inflictOpponent"
+        },
+        {
+          "kind": "ability",
+          "skillUnit": "Protect",
+          "template": "removeSelf"
+        },
+        {
+          "kind": "ability",
+          "skillUnit": "Sacrifice",
+          "template": "gainSelf"
+        },
+        {
+          "kind": "ability",
+          "skillUnit": "Curse",
+          "template": "gainStartOfTurn"
+        },
+        {
+          "kind": "passive",
+          "skillUnit": "InstantNerf",
+          "template": "gainCombatStart"
+        },
+        {
+          "kind": "passive",
+          "skillUnit": "TurnDebuff",
+          "template": "inflictEndOfTurn"
+        },
+        {
+          "kind": "passive",
+          "skillUnit": "Reflect",
+          "template": "reflectStatus"
+        },
+        {
+          "kind": "passive",
+          "skillUnit": "Protect",
+          "template": "immuneStatus"
+        }
       ]
     },
     "elementActionBuff": {
@@ -34,7 +66,58 @@
         "Dark": "darkActionBuff"
       },
       "rules": [
-        { "kind": "ability", "skillUnit": "InstantBoost", "template": "applyActionBuffSelf" }
+        {
+          "kind": "ability",
+          "skillUnit": "InstantBoost",
+          "template": "applyActionBuffSelf"
+        }
+      ]
+    },
+    "bleedStatus": {
+      "effects": {
+        "Bleed": "bleed"
+      },
+      "rules": [
+        {
+          "kind": "ability",
+          "skillUnit": "Debuff",
+          "template": "inflictOpponent"
+        },
+        {
+          "kind": "ability",
+          "skillUnit": "Protect",
+          "template": "removeSelf"
+        },
+        {
+          "kind": "ability",
+          "skillUnit": "Sacrifice",
+          "template": "gainSelf"
+        },
+        {
+          "kind": "ability",
+          "skillUnit": "Curse",
+          "template": "gainStartOfTurn"
+        },
+        {
+          "kind": "passive",
+          "skillUnit": "InstantNerf",
+          "template": "gainCombatStart"
+        },
+        {
+          "kind": "passive",
+          "skillUnit": "TurnDebuff",
+          "template": "inflictEndOfTurn"
+        },
+        {
+          "kind": "passive",
+          "skillUnit": "Reflect",
+          "template": "reflectStatus"
+        },
+        {
+          "kind": "passive",
+          "skillUnit": "Protect",
+          "template": "immuneStatus"
+        }
       ]
     }
   },
@@ -57,7 +140,8 @@
         "status.darkActionBuff": "Dark Action Buff",
         "timing.combatStart": "Combat Start",
         "timing.startOfTurn": "Start-of-Turn",
-        "timing.endOfTurn": "End-of-Turn"
+        "timing.endOfTurn": "End-of-Turn",
+        "status.bleed": "Bleed"
       },
       "templates": {
         "inflictOpponent": "Inflict {multiplier} {status} on the opponent.",
@@ -79,7 +163,8 @@
         "status.earthActionBuff": "土微增益",
         "status.windActionBuff": "风微增益",
         "status.lightActionBuff": "光微增益",
-        "status.darkActionBuff": "暗微增益"
+        "status.darkActionBuff": "暗微增益",
+        "status.bleed": "出血"
       },
       "templates": {}
     },
@@ -91,7 +176,8 @@
         "status.earthActionBuff": "土微增益",
         "status.windActionBuff": "風微增益",
         "status.lightActionBuff": "光微增益",
-        "status.darkActionBuff": "暗微增益"
+        "status.darkActionBuff": "暗微增益",
+        "status.bleed": "出血"
       },
       "templates": {}
     }
