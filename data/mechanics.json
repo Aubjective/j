@@ -1,5 +1,5 @@
 {
-  "version": 17,
+  "version": 18,
   "source": "Jobmania Database Guides and Skill Unit sheets, Localization Skills Description sheet, plus confirmed in-game descriptions",
   "powerLv": {
     "stat": {
@@ -1011,6 +1011,24 @@
       "includesExhaust": true,
       "badMoodStacksReduction": "half",
       "triggerAt": "AfterAction"
+    },
+    "Lifesteal": {
+      "family": "Apply Tag",
+      "applyTag": true,
+      "skillUnit": "ApplyOn",
+      "effect": "LifeSteal",
+      "termKey": "mechanic.lifesteal",
+      "localisationKey": "LifeStealApplyXDescr",
+      "mechanicConfirmed": true,
+      "confirmationSource": "live+sheet+localisation",
+      "clickable": true,
+      "templateKey": "lifesteal",
+      "templateArgs": {
+        "basePercent": "healPercentOfDamageDealt",
+        "upgradePercent": "upgradeHealPercentOfDamageDealt"
+      },
+      "healPercentOfDamageDealt": 50,
+      "upgradeHealPercentOfDamageDealt": 100
     }
   },
   "applyTags": {

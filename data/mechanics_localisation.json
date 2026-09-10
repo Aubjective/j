@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 16,
   "locales": {
     "en": {
       "terms": {
@@ -49,7 +49,8 @@
         "mechanic.steal": "Steal",
         "mechanic.exhaust": "Exhaust",
         "mechanic.stackCharge": "Stack Charge",
-        "mechanic.food": "Food"
+        "mechanic.food": "Food",
+        "mechanic.lifesteal": "Lifesteal"
       },
       "mechanicNames": {
         "Strength Buff": "Strength Buff",
@@ -86,7 +87,8 @@
         "Steal": "Steal",
         "Exhaust": "Exhaust",
         "Stack Charge": "Stack Charge",
-        "Food": "Food"
+        "Food": "Food",
+        "Lifesteal": "Lifesteal"
       },
       "nameTemplates": {
         "element": "{element} Element",
@@ -133,7 +135,8 @@
         "steal": "(Player) If this skill kills the opponent, gain random amount of dungeon coins, golds or crystals / (Enemy Monster) Steal random amount of dungeon coins, golds or crystals from the player (Can't be taken back).",
         "exhaust": "This ability can only be used once in each combat. If it is a Hero ability, it will have {extraCooldown} extra turns of cooldown/ Enemy monsters will use this as threshold ability only once, but the effect does not apply to their random actions.",
         "stackCharge": "Increase the next damage dealt by {basePercent}%, decrease the effect by {decayPercent}% for each use. ({upgradePercent}% if upgraded).",
-        "food": "This skill has [Exhaust] effect. Reduce your Bad Mood debuff stacks by half upon use."
+        "food": "This skill has [Exhaust] effect. Reduce your Bad Mood debuff stacks by half upon use.",
+        "lifesteal": "Heal {basePercent}% ({upgradePercent}% if upgraded) from damage dealt."
       }
     },
     "zh-CN": {
@@ -171,7 +174,8 @@
         "mechanic.steal": "偷盗",
         "mechanic.exhaust": "除外",
         "mechanic.stackCharge": "叠加蓄力",
-        "mechanic.food": "食物"
+        "mechanic.food": "食物",
+        "mechanic.lifesteal": "吸血"
       },
       "mechanicNames": {
         "Protect": "护甲",
@@ -200,7 +204,8 @@
         "Steal": "偷盗",
         "Exhaust": "除外",
         "Stack Charge": "叠加蓄力",
-        "Food": "食物"
+        "Food": "食物",
+        "Lifesteal": "吸血"
       },
       "nameTemplates": {},
       "linkTemplates": {},
@@ -221,7 +226,8 @@
         "steal": "(玩家) 如果此技能是致命一击，获得任意数目的探险币，金币或水晶 / (敌人) 从玩家偷取随机数目的探险币，金币或水晶（不能夺回）。",
         "exhaust": "每场战斗只能使用此技能一次, 如果此技能是英雄的主动技能时, 延长{extraCooldown}回合的冷却时间 / 对于敌人, 作为临界点技能只会使用一次, 但作为随机技能将没有限制。",
         "stackCharge": "下一击的伤害提升{basePercent}%, 每次触发减少{decayPercent}%效果。 (升级后{upgradePercent}% )",
-        "food": "这个技能有【除外】效果。使用此技能后，你的坏情绪叠加减半。"
+        "food": "这个技能有【除外】效果。使用此技能后，你的坏情绪叠加减半。",
+        "lifesteal": "自身将恢复{basePercent}%对敌方所造成的直接伤害。(升级后提升至{upgradePercent}% )"
       }
     },
     "zh-TW": {
@@ -259,7 +265,8 @@
         "mechanic.steal": "偷盜",
         "mechanic.exhaust": "除外",
         "mechanic.stackCharge": "疊加蓄力",
-        "mechanic.food": "食物"
+        "mechanic.food": "食物",
+        "mechanic.lifesteal": "吸血"
       },
       "mechanicNames": {
         "Protect": "護甲",
@@ -288,7 +295,8 @@
         "Steal": "偷盜",
         "Exhaust": "除外",
         "Stack Charge": "疊加蓄力",
-        "Food": "食物"
+        "Food": "食物",
+        "Lifesteal": "吸血"
       },
       "nameTemplates": {},
       "linkTemplates": {},
@@ -309,7 +317,8 @@
         "steal": "(玩家) 如果此技能是致命一擊，獲得任意數目的探險幣，金幣或水晶 / (敵人) 從玩家偷取隨機數目的探險幣，金幣或水晶（不能奪回）。",
         "exhaust": "每場戰鬥只能使用此技能一次, 如果此技能是英雄的主動技能時, 延長{extraCooldown}回合的冷卻時間 / 對於敵人, 作為臨界點技能只會使用一次, 但作為隨機技能將沒有限制。",
         "stackCharge": "下一擊的傷害提升{basePercent}%, 每次觸發減少{decayPercent}%效果。 (升級後{upgradePercent}% )",
-        "food": "這個技能有【除外】效果。使用此技能後，你的壞情緒疊加減半。"
+        "food": "這個技能有【除外】效果。使用此技能後，你的壞情緒疊加減半。",
+        "lifesteal": "自身將恢復{basePercent}%對敵方所造成的直接傷害。 (升級後提升至{upgradePercent}% )"
       }
     }
   }
